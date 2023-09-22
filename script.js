@@ -6,6 +6,8 @@ const taskList = document.getElementById("taskList");
 // Load tasks from local storage if available
 const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+
+
 // Function to display tasks
 function displayTasks() {
     taskList.innerHTML = "";
@@ -16,6 +18,7 @@ function displayTasks() {
         taskList.appendChild(listItem);
     });
 }
+
 
 // Function to add a new task
 function addTask() {
@@ -28,12 +31,14 @@ function addTask() {
     }
 }
 
+
 // Function to delete a task
 function deleteTask(index) {
     savedTasks.splice(index, 1);
     localStorage.setItem("tasks", JSON.stringify(savedTasks));
     displayTasks();
 }
+
 
 //Function to edit task
 function editTask(index) {
@@ -44,6 +49,7 @@ function editTask(index) {
         displayTasks();
     }
 }
+
 
 // Initial task display
 displayTasks();
